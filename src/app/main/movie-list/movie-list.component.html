@@ -1,0 +1,8 @@
+<div class="container">
+    <div class="row row-cols-4">
+            <app-movie-item class = "col"
+            *ngFor="let movieEl of movies; let i = index" [movie]="movieEl" [index]="i"
+            ></app-movie-item> 
+    </div>   
+</div>
+  

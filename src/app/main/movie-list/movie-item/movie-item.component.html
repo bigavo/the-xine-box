@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="card" style="width: 18rem;">
+        <img src="{{ movie.imagePath }}" class="img-responsive" alt="Card image cap">
+        <div class="card-body">
+          <i class="bi bi-heart"></i>
+          <h5 class="card-title">{{ movie.name }}</h5>
+          <p class="card-text">{{ movie.description }}</p>
+          <button type="button" class="btn btn-outline-info" (click)="onSeeDetails()">See details</button>
+        </div>
+      </div>
+</div>
