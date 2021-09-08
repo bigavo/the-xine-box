@@ -1,4 +1,4 @@
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MovieDetailsComponent } from './main/movie-details/movie-details.component';
 import { MovieService } from './main/movie.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,7 +11,7 @@ import { MovieListComponent } from './main/movie-list/movie-list.component';
 import { MovieItemComponent } from './main/movie-list/movie-item/movie-item.component';
 import { CommonModule } from '@angular/common';
 import { FavoriteListComponent } from './favorite-list/favorite-list.component';
-import { MovieDetailsComponent } from './main/movie-details/movie-details.component';
+
 
 
 @NgModule({
@@ -24,13 +24,14 @@ import { MovieDetailsComponent } from './main/movie-details/movie-details.compon
     MovieListComponent,
     MovieItemComponent,
     FavoriteListComponent,
-    MovieDetailsComponent,
-    FontAwesomeModule
+    MovieDetailsComponent
   ],
+  
   imports: [
     BrowserModule,
     CommonModule,
   ],
+  exports:[AppComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
