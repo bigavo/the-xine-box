@@ -14,7 +14,7 @@ export class MovieService {
   private movies: Movie[] = [
    
     new Movie('Game of throne',
-    'Seven noble families fight for control of the mythical land of Westeros. Friction between the houses leads to full-scale war. ',
+    'This is first movie',
     'June 20, 2021',
     'https://www.themoviedb.org/t/p/w440_and_h660_face/u3bZgnGQ9T01sWNhyveQz0wH0Hl.jpg'
     ),
@@ -25,13 +25,13 @@ export class MovieService {
     'https://www.themoviedb.org/t/p/w440_and_h660_face/q719jXXEzOoYaps6babgKnONONX.jpg'
     ),
     new Movie('Game of throne',
-    'Seven noble families fight for control of the mythical land of Westeros. Friction between the houses leads to full-scale war. ',
+    'Winter is comming, bro',
     'June 20, 2021',
     'https://www.themoviedb.org/t/p/w440_and_h660_face/u3bZgnGQ9T01sWNhyveQz0wH0Hl.jpg'
     ),
     
     new Movie('Your name',
-    'This is an anime movie',
+    'This is a Japenese movie',
     'June 20, 2021',
     'https://www.themoviedb.org/t/p/w440_and_h660_face/q719jXXEzOoYaps6babgKnONONX.jpg'
     ),
@@ -48,9 +48,8 @@ getMovie(index: number) {
 //     this.sLService.addIngredients(ingredients);
 // }
 
-addMovie(movie: Movie) {
-  this.movies.push(movie);
-  this.movieChanges.next(this.movies.slice());
+addMovieToFavoriteList(index: number) {
+  this.choosedMovie.next(this.movies[index]);
 }
 
 // updateRecipe(index:number, newRecipe: Recipe){

@@ -1,6 +1,7 @@
+import { Movie } from './../main/movie.model';
 import { MovieService } from './../main/movie.service';
 import { Component, OnInit } from '@angular/core';
-import { Movie } from '../main/movie.model';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-favorite-list',
@@ -8,10 +9,14 @@ import { Movie } from '../main/movie.model';
   styleUrls: ['./favorite-list.component.css']
 })
 export class FavoriteListComponent implements OnInit {
-  savedMovies: Movie[];
+  movies: Movie[] = new Array<Movie>();
+  subscription = Subscription;
   constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
+      this.movieService.choosedMovie.subscribe(movie =>{
+      this.movies.push(movie);
+    })
   }
 
 }

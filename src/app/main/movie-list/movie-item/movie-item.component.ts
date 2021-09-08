@@ -20,4 +20,7 @@ export class MovieItemComponent implements OnInit {
   onSeeDetails(){
     this.movieSevice.getMovie(this.index);
   }
+  onAddtoFavoriteList(){
+    this.movieSevice.addMovieToFavoriteList(this.index);
+  }
 }
