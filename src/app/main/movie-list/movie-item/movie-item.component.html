@@ -1,11 +1,14 @@
 <div class="row">
     <div class="card" style="width: 18rem;">
-        <img src="{{ movie.imagePath }}" class="img-responsive" alt="Card image cap">
+        <img class="card-img" src="{{ movie.imagePath }}" class="img-responsive" alt="Card image cap">
         <div class="card-body">
           <!-- <fa-icon [icon]="faHeart" (click)="onAddtoFavoriteList()"></fa-icon> -->
-
-          <fa-icon [icon]="['far','heart']"></fa-icon>
-        <hr>
+          <div class="card-img-overlay">
+            <div class="container-fluid">
+              <button style="opacity: 0.7;" type="button" class="btn btn-light"><fa-icon [icon]="['far','heart']"></fa-icon></button>
+              <button id="option-btn" style="float:right" style="opacity: 0.7;" type="button" class="btn btn-light"><fa-icon [icon]="faEllipsisH"></fa-icon></button>
+             </div>  
+          </div>
           <h5 class="card-title">{{ movie.name }}</h5>
           <p class="card-text">{{ movie.description }}</p>
           <button type="button" class="btn btn-outline-info" (click)="onSeeDetails()">See details</button>

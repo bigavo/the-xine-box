@@ -4,7 +4,7 @@ import { MovieService } from './../../movie.service';
 import { Movie } from './../../movie.model';
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
-import { faFilm, faHeart} from '@fortawesome/free-solid-svg-icons';
+import { faEllipsisH, faFilm, faHeart} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-movie-item',
@@ -13,8 +13,10 @@ import { faFilm, faHeart} from '@fortawesome/free-solid-svg-icons';
 })
 export class MovieItemComponent implements OnInit {
   constructor(private movieSevice: MovieService){
-    library.add(faFilm,faHeart)
+    library.add(faFilm,faHeart, faEllipsisH)
   }
+  faEllipsisH = faEllipsisH;
+  
   @Input() movie: Movie;
   @Input() index: number;
 
