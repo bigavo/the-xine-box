@@ -1,3 +1,4 @@
+import { faFilm } from '@fortawesome/free-solid-svg-icons';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,5 +12,6 @@ export class MainComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  faFilm = faFilm;
 
 }

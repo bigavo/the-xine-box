@@ -26,16 +26,20 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MovieListComponent,
     MovieItemComponent,
     FavoriteListComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
   ],
   
   imports: [
     BrowserModule,
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   exports:[AppComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {
+  }
+ }
