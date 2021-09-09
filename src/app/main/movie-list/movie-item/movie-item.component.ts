@@ -1,8 +1,9 @@
+import { library } from '@fortawesome/fontawesome-svg-core';
 import { Subject } from 'rxjs';
 import { MovieService } from './../../movie.service';
 import { Movie } from './../../movie.model';
 import { Component, Input, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common'; 
 import { faFilm, faHeart} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -11,8 +12,8 @@ import { faFilm, faHeart} from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./movie-item.component.css']
 })
 export class MovieItemComponent implements OnInit {
-  faHeart = faHeart;
   constructor(private movieSevice: MovieService){
+    library.add(faFilm,faHeart)
   }
   @Input() movie: Movie;
   @Input() index: number;

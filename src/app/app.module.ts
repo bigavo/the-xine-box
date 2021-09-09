@@ -1,3 +1,6 @@
+import { far } from '@fortawesome/free-regular-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
 import { AppRoutingModule } from './app-routing.module';
 import { MovieDetailsComponent } from './main/movie-details/movie-details.component';
 import { MovieService } from './main/movie.service';
@@ -12,7 +15,7 @@ import { MovieListComponent } from './main/movie-list/movie-list.component';
 import { MovieItemComponent } from './main/movie-list/movie-item/movie-item.component';
 import { CommonModule } from '@angular/common';
 import { FavoriteListComponent } from './favorite-list/favorite-list.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -40,6 +43,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor() {
+  constructor(library: FaIconLibrary) {
+    library.addIconPacks(fas,far);
   }
  }

@@ -2,8 +2,9 @@
     <div class="card" style="width: 18rem;">
         <img src="{{ movie.imagePath }}" class="img-responsive" alt="Card image cap">
         <div class="card-body">
-          
-          <fa-icon [icon]="faHeart" (click)="onAddtoFavoriteList()"></fa-icon>
+          <!-- <fa-icon [icon]="faHeart" (click)="onAddtoFavoriteList()"></fa-icon> -->
+
+          <fa-icon [icon]="['far','heart']"></fa-icon>
         <hr>
           <h5 class="card-title">{{ movie.name }}</h5>
           <p class="card-text">{{ movie.description }}</p>
