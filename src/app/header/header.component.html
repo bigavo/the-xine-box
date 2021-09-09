@@ -29,7 +29,27 @@
   
       <!-- Right elements -->
       <div class="d-flex align-items-center">
-         <a style="cursor:pointer"  class="btn btn-outline-primary" routerLink="/favorite-list">Your lists <span class="caret"></span></a>
+        <!-- Avatar -->
+       
+        <div class="btn-group" appDropdown>
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
+              <img style="vertical-align: middle;
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVBxoCA9tgwRaE8LtRSkSNgB14SP7PGnK7kl2lLgrCumF5OzNMkzK_o5Zp5nTHk5HLJKI&usqp=CAU"
+              alt="Avatar"
+              class="avatar">
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a style="cursor:pointer"  href="#">Menu item 1</a></li>
+              <li><a rstyle="cursor:pointer"  href="#">Menu item 2</a></li>
+            </ul>
+          </div>
+        </div>
+         
       </div>
       <!-- Right elements -->
     </div>

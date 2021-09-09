@@ -1,6 +1,7 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { Component, OnInit } from '@angular/core';
-import { faSearch, faFilm } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faFilm, faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { faHotjar } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -8,8 +9,10 @@ import { faSearch, faFilm } from '@fortawesome/free-solid-svg-icons';
 })
 export class HeaderComponent implements OnInit {
   faSearch= faSearch;
+  faCaretDown = faCaretDown;
+  
   constructor() { 
-    library.add(faSearch,faFilm);
+    library.add(faSearch,faFilm,faCaretDown);
   }
 
   ngOnInit(): void {

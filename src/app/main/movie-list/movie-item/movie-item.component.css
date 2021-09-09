@@ -2,3 +2,6 @@
     opacity: 0.7;
     float: right;
 }
+.checked {
+    color: orange;
+  }
