@@ -10,10 +10,11 @@ const appRoutes: Routes = [
     {
         path: 'main', 
         component: MainComponent,
-        children: [
-            {   path: ':id', component: MovieDetailsComponent
-            }
-        ]},
+        // children: [
+        //     {   path: ':id', component: MovieDetailsComponent
+        //     }
+        // ]
+    },
     {
         path: '', redirectTo: '/main', pathMatch: 'full'
     },

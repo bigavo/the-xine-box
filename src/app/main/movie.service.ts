@@ -58,7 +58,9 @@ getMovie(index: number) {
 addMovieToFavoriteList(index: number) {
   this.choosedMovie.next(this.movies[index]);
 }
-
+getYear(movie: Movie){
+  return movie.premieredTime.substring(0,4);
+}
 // updateRecipe(index:number, newRecipe: Recipe){
 //   this.recipes[index] = newRecipe;
 //   this.recipesChanged.next(this.recipes.slice());

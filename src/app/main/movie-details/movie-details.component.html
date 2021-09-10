@@ -1,16 +1,6 @@
-<!-- <div>
-    <div class="card bg-dark text-white">
-        <img class="movie-img" [src]= "movie.imagePath" alt="Movie image">
-        <div class="movie-img-overlay">
-          <h5 class="movie-title">{{ movie.name }}</h5>
-          <p class="movie-description">{{ movie.description }} </p>
-          <p class="movie-premirereTime">Movie's Premired time</p>
-        </div>
-      </div>
-</div> -->
-<div>
-    <div class="card bg-dark text-white" style="height: 700px;"> 
-        <img class="card-img" [src]= "movie.imagePath" alt="Card image" style="opacity: 0.2;">
+<!-- <div style="height: 600px;">
+    <div class="card bg-dark text-white"> 
+        <img class="card-img" [src]= "movie.backdrop_path" alt="Card image" style="opacity: 0.2;">
         <div class="card-img-overlay">
             <img  [src]= "movie.imagePath" alt="Card image" style = "max-height: 500px;" >
           <h5 class="card-title">Card title</h5>
@@ -18,4 +8,41 @@
           <p class="card-text">Last updated 3 mins ago</p>
         </div>
     </div>
+</div> -->
+<div>
+  <div class="card bg-dark text-white"> 
+      <img class="card-img" [src]= "movie.backdrop_path" alt="Card image" style="opacity: 0.2">
+      <div class="card-img-overlay">
+        <div class="row">
+          <div class="col-md-4">
+            <img  [src]= "movie.imagePath" alt="Card image" style = "max-height: 500px;" >
+          </div>
+            <div class="col-md-7" style="padding-top: 100px;margin-left:0px;">
+              <h5 class="card-title">{{ movie.name }}({{ year }})</h5>
+              <p class="card-text">{{ movie.description }}</p>
+              <p class="secondary-text">{{ movie.premieredTime }}</p>
+              <div class="row">
+               
+              <div id="manage-menu" class="col">
+                <div class="col" id="rating">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                  <span class=""><p>{{ movie.votes }} votes</p></span>
+                  <div class="row">
+                    <button type="button" class="btn btn-light btn-circle btn-sm" ><fa-icon [icon]="faList"></fa-icon></button>
+                    <button type="button" class="btn btn-light btn-circle btn-sm"><fa-icon [icon]="faHeart"></fa-icon></button>
+                    <button type="button" class="btn btn-light btn-circle btn-sm"><fa-icon [icon]="faBookMark"></fa-icon></button>
+                    <button type="button" class="btn btn-light btn-circle btn-sm"><fa-icon [icon]="faStar"></fa-icon></button>
+                    
+                  </div>
+                </div>
+                
+               </div>
+              </div>
+            </div>
+          </div>
+  </div>
 </div>
