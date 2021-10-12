@@ -1,4 +1,5 @@
-import { library } from '@fortawesome/fontawesome-svg-core';
+import { movieCategory } from './../../shared/movieCategory';
+import { library } from '@fortawesome/fontawesome-svg-core'
 import { MovieService } from './../movie.service';
 import { Movie } from './../movie.model';
 import { Component, OnInit } from '@angular/core';
@@ -13,18 +14,18 @@ import { faBookmark, faSave, faStar } from '@fortawesome/free-regular-svg-icons'
 export class MovieDetailsComponent implements OnInit {
 
   constructor(private movieService: MovieService) { }
+  
   movie: Movie
   id: number;
   year: string;
-  faList = faList;
-  faHeart = faHeart;
-  faSave = faSave;
-  faStar = faStar;
-  faBookMark = faBookmark;
+  
   ngOnInit(): void {
-    this.movieService.choosedMovie.subscribe(movie => {
+    this.movieService.choosedMovie.subscribe(data => {
       library.add(faList,faHeart,faStar, faSave, faBookmark);
-      this.movie = movie;
+
+      if (data[0] == 0)  
+        {this.movie = data[1]}
+
       this.year = this.movieService.getYear(this.movie);
     })
   }

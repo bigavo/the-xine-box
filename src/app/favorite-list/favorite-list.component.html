@@ -1,13 +1,26 @@
-<div class="row">
-    <p class="">Hei It's actually working</p>
-    <div *ngFor="let movie of movies; let i = index" class="row row-cols-4">
-        <div class="card" style="width: 18rem;">
-            <img src="{{ movie.imagePath }}" class="img-responsive" alt="Card image cap">
-            <div class="card-body">
-             <hr>
-              <h5 class="card-title">{{ movie.name }}</h5>
-              <p class="card-text">{{ movie.description }}</p>
-            </div>
-          </div>
-    </div>    
+<div>
+  <h1>My Watchlist</h1>
+    <div *ngFor="let movieEl of movies; let i = index" [movie]="movieEl" [index]="i" class="container row row-cols-4">
+        <div>
+          <img src="{{ movieEl.imagePath }}" alt="Card image cap" style="height: 270px; border-radius: 10px; ">
+            
+        </div>
+        <div>
+          <h5>{{ movieEl.name }}</h5>
+          <p>{{ movieEl.description }}</p>
+          <div>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+        </div>
+        <div class="row">
+          <button type="button" class="btn btn-light btn-circle btn-sm" ><fa-icon [icon]="faList"></fa-icon></button>
+          <button type="button" class="btn btn-light btn-circle btn-sm"><fa-icon [icon]="faHeart"></fa-icon></button>
+          <button type="button" class="btn btn-light btn-circle btn-sm"><fa-icon [icon]="faBookMark"></fa-icon></button>
+          <button type="button" class="btn btn-light btn-circle btn-sm"><fa-icon [icon]="faStar"></fa-icon></button>
+        </div>
+
+  </div>       
 </div>

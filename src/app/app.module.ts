@@ -1,3 +1,5 @@
+
+import { MovieItemComponent } from './main/movie-list/movie-item/movie-item.component';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -14,10 +16,13 @@ import { MainComponent } from './main/main.component';
 import { SideNavigationComponent } from './side-navigation/side-navigation.component';
 import { AuthComponent } from './auth/auth.component';
 import { MovieListComponent } from './main/movie-list/movie-list.component';
-import { MovieItemComponent } from './main/movie-list/movie-item/movie-item.component';
 import { CommonModule } from '@angular/common';
 import { FavoriteListComponent } from './favorite-list/favorite-list.component';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {NO_ERRORS_SCHEMA,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { TestComponent } from './main/movie-list/test/test.component';
+
+
 
 
 @NgModule({
@@ -28,10 +33,11 @@ import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontaweso
     SideNavigationComponent,
     AuthComponent,
     MovieListComponent,
-    MovieItemComponent,
     FavoriteListComponent,
     MovieDetailsComponent,
-    DropdownDirective 
+    DropdownDirective,
+    MovieItemComponent,
+    TestComponent
   ],
   
   imports: [
@@ -45,7 +51,11 @@ import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontaweso
     DropdownDirective
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA,
+    NO_ERRORS_SCHEMA
+  ]
 })
 export class AppModule {
   constructor(library: FaIconLibrary) {

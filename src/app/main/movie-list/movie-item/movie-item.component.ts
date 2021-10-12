@@ -1,10 +1,14 @@
+import { MovieService } from './../../movie.service';
+import { movieCategory } from './../../../shared/movieCategory';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { Subject } from 'rxjs';
-import { MovieService } from './../../movie.service';
 import { Movie } from './../../movie.model';
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
 import { faEllipsisH, faFilm, faHeart} from '@fortawesome/free-solid-svg-icons';
+import {Output, EventEmitter } from '@angular/core';
+
+
 
 @Component({
   selector: 'app-movie-item',
@@ -12,20 +16,22 @@ import { faEllipsisH, faFilm, faHeart} from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./movie-item.component.css']
 })
 export class MovieItemComponent implements OnInit {
-  constructor(private movieSevice: MovieService){
+  @Input() movie: Movie;
+
+
+  // constructor(){}
+  constructor(private movieService: MovieService){
     library.add(faFilm,faHeart, faEllipsisH)
   }
   faEllipsisH = faEllipsisH;
-  
-  @Input() movie: Movie;
-  @Input() index: number;
-
+  faHeart = faHeart;
   ngOnInit(): void {
   }
+
   onSeeDetails(){
-    this.movieSevice.getMovie(this.index);
+   this.movieService.choosedMovie.next([movieCategory.All, this.movie]);
   }
   onAddtoFavoriteList(){
-    this.movieSevice.addMovieToFavoriteList(this.index);
+    this.movieService.choosedMovie.next([movieCategory.Popular, this.movie]);
   }
 }
