@@ -1,4 +1,4 @@
-import { faList, faHeart, faSave,faStar, faBookmark } from '@fortawesome/free-solid-svg-icons';
+import { faList, faHeart, faSave,faStar, faBookmark, faTrash, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { Movie } from '../main/movie.model';
 import { MovieService } from '../main/movie.service';
 import { Component, OnInit } from '@angular/core';
@@ -17,12 +17,12 @@ export class FavoriteListComponent implements OnInit {
   
   constructor(private movieService: MovieService) { }
   faList = faList;
-  faHeart = faHeart;
+  faTrash = faTrashAlt;
   faSave = faSave;
   faStar = faStar;
   faBookMark = faBookmark;
   ngOnInit(): void {
-      library.add(faList,faHeart,faStar, faSave, faBookmark);
+      library.add(faTrash,faHeart,faStar, faSave, faBookmark);
       this.movieService.choosedMovie.subscribe(data => {
       if(data[0]==2)
       {this.movies.push(data[1]);}

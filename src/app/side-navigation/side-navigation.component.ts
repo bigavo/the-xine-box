@@ -1,4 +1,4 @@
-import { faAward, faFilm, faGlobeAsia } from '@fortawesome/free-solid-svg-icons';
+import { faAward, faFilm, faGlobeAsia, faHeart } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { Component, OnInit } from '@angular/core';
 import { faHotjar } from '@fortawesome/free-brands-svg-icons';
@@ -9,14 +9,14 @@ import { faEye, faThumbsUp } from '@fortawesome/free-regular-svg-icons';
   styleUrls: ['./side-navigation.component.css']
 })
 export class SideNavigationComponent implements OnInit {
-  faHotjar = faHotjar;
+  faHeart = faHeart;
   faEye = faEye;
   faThumbsUp = faThumbsUp;
   faAward = faAward;
   faGlobeAsia = faGlobeAsia;
 
   constructor() { 
-    library.add(faHotjar, faEye, faThumbsUp, faAward, faGlobeAsia);
+    library.add(faHeart, faEye, faThumbsUp, faAward, faGlobeAsia);
   }
 
   ngOnInit(): void {

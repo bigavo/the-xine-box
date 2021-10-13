@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
 import { faEllipsisH, faFilm, faHeart} from '@fortawesome/free-solid-svg-icons';
 import {Output, EventEmitter } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 
@@ -17,10 +18,11 @@ import {Output, EventEmitter } from '@angular/core';
 })
 export class MovieItemComponent implements OnInit {
   @Input() movie: Movie;
+  @Input() index: number;
 
 
   // constructor(){}
-  constructor(private movieService: MovieService){
+  constructor(private movieService: MovieService, private router: Router, private route: ActivatedRoute){
     library.add(faFilm,faHeart, faEllipsisH)
   }
   faEllipsisH = faEllipsisH;
@@ -29,9 +31,11 @@ export class MovieItemComponent implements OnInit {
   }
 
   onSeeDetails(){
-   this.movieService.choosedMovie.next([movieCategory.All, this.movie]);
+    this.movieService.choosedMovie.next([movieCategory.All, this.movie]);
+    this.router.navigate(['details']);
   }
   onAddtoFavoriteList(){
+    event.stopPropagation();
     this.movieService.choosedMovie.next([movieCategory.Popular, this.movie]);
   }
 }

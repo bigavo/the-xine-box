@@ -10,14 +10,11 @@ const appRoutes: Routes = [
     {
         path: 'main', 
         component: MainComponent,
-        // children: [
-        //     {   path: ':id', component: MovieDetailsComponent
-        //     }
-        // ]
+    
     },
-    {
-        path: '', redirectTo: '/main', pathMatch: 'full'
-    },
+    // { path: '', redirectTo: '/main', pathMatch: 'full'},
+    { path: 'details', component: MovieDetailsComponent},
+    
     
     { path:'favorite-list', component: FavoriteListComponent},
 ]
